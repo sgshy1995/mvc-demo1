@@ -1,0 +1,17 @@
+section.app3 {
+
+}
+section.app3 .square{
+    width: 10vw;
+    height: 10vw;
+    border: 1px solid saddlebrown;
+    margin-left: 5vw;
+    margin-top: 10vh;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-align: center;
+    line-height: 10vw;
+}
+section.app3 .square.active{
+    transform: translateX(200%);
+}

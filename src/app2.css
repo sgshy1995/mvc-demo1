@@ -1,0 +1,32 @@
+section.app2 {
+    border: 1px solid black;
+    width: 50vw;
+    height: 50vh;
+}
+section.app2 .tabNav{
+    display: flex;
+}
+section.app2 .tabNav > li{
+    width: 50%;
+    height: 15vh;
+    border: 1px solid grey;
+}
+section.app2 .tabNav > li.selected{
+    background: hotpink;
+}
+section.app2 .tabContent{
+    display: flex;    
+}
+section.app2 .tabContent > li{
+    width: 100%;
+    height: 35vh;
+    display: none;
+}
+section.app2 .tabContent > li:nth-child(1).active{
+    background: khaki;
+    display: block;
+}
+section.app2 .tabContent > li:nth-child(2).active{
+    background: wheat;
+    display: block;
+}

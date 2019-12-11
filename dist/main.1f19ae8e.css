@@ -1,0 +1,126 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+*:focus{
+    outline: none;
+}
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+ol,ul{
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6,a{
+    text-decoration: none;
+}
+body{
+    overflow: hidden;
+}
+body .page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+body .page > section{
+    width: 50vw;
+    height: 50vh;
+    border: 1px solid black;
+}
+section.app1{
+    width: 50vw;
+    height: 50vh;
+    border: 1px solid black;
+    padding: 20px;
+}
+section.app1 #app1-output{
+    cursor: default;
+    padding: 5px;
+    border: 1px solid grey;
+    width: 10vw;
+    margin-bottom: 10px;
+}
+section.app1 #app1-actions{
+    cursor: default;
+}
+section.app1 #app1-actions > button{
+    cursor: pointer;
+    padding: 5px;
+}
+section.app2 {
+    border: 1px solid black;
+    width: 50vw;
+    height: 50vh;
+}
+section.app2 .tabNav{
+    display: flex;
+}
+section.app2 .tabNav > li{
+    width: 50%;
+    height: 15vh;
+    border: 1px solid grey;
+}
+section.app2 .tabNav > li.selected{
+    background: hotpink;
+}
+section.app2 .tabContent{
+    display: flex;    
+}
+section.app2 .tabContent > li{
+    width: 100%;
+    height: 35vh;
+    display: none;
+}
+section.app2 .tabContent > li:nth-child(1).active{
+    background: khaki;
+    display: block;
+}
+section.app2 .tabContent > li:nth-child(2).active{
+    background: wheat;
+    display: block;
+}
+section.app3 {
+
+}
+section.app3 .square{
+    width: 10vw;
+    height: 10vw;
+    border: 1px solid saddlebrown;
+    margin-left: 5vw;
+    margin-top: 10vh;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-align: center;
+    line-height: 10vw;
+}
+section.app3 .square.active{
+    transform: translateX(200%);
+}
+section.app4 {}
+
+section.app4 .circle{
+    width: 10vw;
+    height: 10vw;
+    border: 1px solid black;
+    margin: 10vh;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 10vw;
+}
+section.app4 .circle.active{
+    animation: color 0.6s infinite linear;
+}
+@keyframes color{
+    0%{
+        background: skyblue;
+    }
+    100%{
+        background: cadetblue;
+    }
+}
+
+/*# sourceMappingURL=/main.1f19ae8e.css.map */

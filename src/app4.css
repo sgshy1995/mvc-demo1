@@ -1,0 +1,23 @@
+section.app4 {}
+
+section.app4 .circle{
+    width: 10vw;
+    height: 10vw;
+    border: 1px solid black;
+    margin: 10vh;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 10vw;
+}
+section.app4 .circle.active{
+    animation: color 0.6s infinite linear;
+}
+@keyframes color{
+    0%{
+        background: skyblue;
+    }
+    100%{
+        background: cadetblue;
+    }
+}

@@ -1,0 +1,20 @@
+section.app1{
+    width: 50vw;
+    height: 50vh;
+    border: 1px solid black;
+    padding: 20px;
+}
+section.app1 #app1-output{
+    cursor: default;
+    padding: 5px;
+    border: 1px solid grey;
+    width: 10vw;
+    margin-bottom: 10px;
+}
+section.app1 #app1-actions{
+    cursor: default;
+}
+section.app1 #app1-actions > button{
+    cursor: pointer;
+    padding: 5px;
+}
