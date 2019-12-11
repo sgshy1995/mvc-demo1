@@ -1,14 +1,29 @@
 import './app1.css'
 import $ from 'jquery'
 
+const html = `
+<section class="app1">
+<div id="app1-output">
+    <span id="number">100</span>
+</div>
+<div id="app1-actions">
+    <button id="add">+</button>
+    <button id="reduce">-</button>
+    <button id="multiply">*</button>
+    <button id="divide">÷</button>
+</div>
+</section>
+`
+
+$(html).appendTo($('.page'))
 const $add = $('#add')
 const $reduce = $('#reduce')
 const $multiply = $('#multiply')
 const $divide = $('#divide')
 const $number = $('#number')
-const number = localStorage.getItem('number')
+const numberInSpan = localStorage.getItem('number')
 
-$number.text(number || 100)
+$number.text(numberInSpan || 100)
 
 $add.on('click', () => {
     let number = parseInt($number.text())

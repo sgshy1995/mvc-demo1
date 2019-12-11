@@ -11020,13 +11020,15 @@ var _jquery = _interopRequireDefault(require("jquery"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var html = "\n<section class=\"app1\">\n<div id=\"app1-output\">\n    <span id=\"number\">100</span>\n</div>\n<div id=\"app1-actions\">\n    <button id=\"add\">+</button>\n    <button id=\"reduce\">-</button>\n    <button id=\"multiply\">*</button>\n    <button id=\"divide\">\xF7</button>\n</div>\n</section>\n";
+(0, _jquery.default)(html).appendTo((0, _jquery.default)('.page'));
 var $add = (0, _jquery.default)('#add');
 var $reduce = (0, _jquery.default)('#reduce');
 var $multiply = (0, _jquery.default)('#multiply');
 var $divide = (0, _jquery.default)('#divide');
 var $number = (0, _jquery.default)('#number');
-var number = localStorage.getItem('number');
-$number.text(number || 100);
+var numberInSpan = localStorage.getItem('number');
+$number.text(numberInSpan || 100);
 $add.on('click', function () {
   var number = parseInt($number.text());
   number += 1;
@@ -11065,15 +11067,19 @@ var _jquery = _interopRequireDefault(require("jquery"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var html = "\n    <section class=\"app2\">\n        <ol class=\"tabNav\">\n            <li>\u9009 \u9879 1</li>\n            <li>\u9009 \u9879 2</li>\n        </ol>\n        <ol class=\"tabContent\">\n            <li>\u5185\u5BB9\u4E00\u6BD4\u8F83\u591A</li>\n            <li>\u5185\u5BB9\u4E8C\u76F8\u5BF9\u6765\u8BF4\u66F4\u591A\u4E86</li>\n        </ol>\n    </section>\n";
+(0, _jquery.default)(html).appendTo((0, _jquery.default)('.page'));
 var $tabNav = (0, _jquery.default)('.tabNav');
 var $tabContent = (0, _jquery.default)('.tabContent');
+var nthChild = localStorage.getItem('nthOne') || 0;
 $tabNav.on('click', 'li', function (e) {
   var $li = (0, _jquery.default)(e.currentTarget);
   var index = $li.index();
+  localStorage.setItem('nthOne', index);
   $li.addClass('selected').siblings().removeClass('selected');
   $tabContent.children().eq(index).addClass('active').siblings().removeClass('active');
 });
-$tabNav.children().eq(0).trigger('click');
+$tabNav.children().eq(nthChild).trigger('click');
 },{"./app2.css":"app2.css","jquery":"../node_modules/jquery/dist/jquery.js"}],"app3.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
@@ -11088,9 +11094,19 @@ var _jquery = _interopRequireDefault(require("jquery"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var html = "\n<section class=\"app3\">\n    <div class=\"square\" id=\"square\">\u70B9\u6211</div>\n</section>\n";
+(0, _jquery.default)(html).appendTo((0, _jquery.default)('.page'));
 var $square = (0, _jquery.default)('#square');
+var value = localStorage.getItem('method') === 'yes';
+$square.toggleClass('active', value);
 $square.on('click', function () {
-  $square.toggleClass('active');
+  if ($square.hasClass('active')) {
+    localStorage.setItem('method', 'no');
+    $square.removeClass('active');
+  } else {
+    localStorage.setItem('method', 'yes');
+    $square.addClass('active');
+  }
 });
 },{"./app3.css":"app3.css","jquery":"../node_modules/jquery/dist/jquery.js"}],"app4.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
@@ -11106,6 +11122,8 @@ var _jquery = _interopRequireDefault(require("jquery"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var html = "\n<section class=\"app4\">\n<div class=\"circle\" id=\"circle\">\u9009\u6211</div>\n</section>\n";
+(0, _jquery.default)(html).appendTo((0, _jquery.default)('.page'));
 var $circle = (0, _jquery.default)('#circle');
 $circle.on('mousemove', function () {
   $circle.addClass('active');
@@ -11154,7 +11172,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61523" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59728" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
